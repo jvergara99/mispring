@@ -1,17 +1,19 @@
-package mx.uv.javc.todo.model;
+package mx.uv.javc.todo.dto;
 
-public class Todo {
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+public class TodoDTO {
     private long id;
+
+    @NotNull
+    @Size(max = 50)
     private String title;
+
+    @NotNull
+    @Size(max = 1000)
     private String description;
     private boolean completed;
-
-    public Todo(long id, String title, String description, boolean completed) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.completed = completed;
-    }
 
     public long getId() {
         return id;
@@ -38,4 +40,6 @@ public class Todo {
         this.completed = completed;
     }
 
+    
+    
 }
